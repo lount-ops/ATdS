@@ -1,0 +1,31 @@
+---
+/**
+ * src/components/VulnMatrix.astro
+ *
+ * drop-in wrapper for the vuln matrix React component.
+ * the React component fetches /api/vulns.json client-side on mount.
+ *
+ * USAGE in any .astro page:
+ *   ---
+ *   import VulnMatrix from '../components/VulnMatrix.astro';
+ *   ---
+ *   <VulnMatrix />
+ *
+ * The client:only directive is required — the matrix fetches live data
+ * in the browser, there's nothing to SSR.
+ */
+
+ import VulnMatrixReact from '../components/VulnMatrixReact.jsx';
+---
+
+<div class="vuln-matrix-wrap">
+  <VulnMatrixReact client:only="react" />
+</div>
+
+<style>
+  .vuln-matrix-wrap {
+    width: 100%;
+    /* Isolate the matrix from your page's global styles */
+    container-type: inline-size;
+  }
+</style>

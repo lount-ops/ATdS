@@ -1,0 +1,12 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
+import VulnMatrixReact from '../components/VulnMatrixReact.jsx';                                                                                                       
+---                                                                                                                                                                     
+<Layout>                                                                                                                                                                        
+<div class="vuln-matrix-wrap">                                                                                                                                          
+  <VulnMatrixReact client:only="react" />                                                                                                                               
+</div>
+
+</Layout>
