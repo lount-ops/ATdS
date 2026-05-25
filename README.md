@@ -6,7 +6,7 @@
 ---
 
 ### 🦑 Why I needed this and you may as well.
-`Environments` `Debian 13, FNM, Nushell (Linux) 0.112.0` `Debian 13, FNM, ZSH 5.1`
+`Environments` `Debian 13, FNM, Nushell 0.112.0` `Debian 13, FNM, ZSH 5.1`
 `Should work w/ NVM`
 
 I  was looking around needing a way to render a site w/ dynamic content, and easy dev database hooks. I discovered Astro and thought to myself, "Self, it can't get much better than this."
