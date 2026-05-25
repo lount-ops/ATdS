@@ -58,8 +58,8 @@ Look at those eyes. What's that cow been smoking?
 Go ahead and Git 🫣 this repository:
 
 ```bash
-git clone https://github.com/lount-ops/vulnmatrix
-cd vulnmatrix
+git clone https://github.com/lount-ops/ATdS
+cd ATdS
 ```
 
 ### Install and update dependencies:
