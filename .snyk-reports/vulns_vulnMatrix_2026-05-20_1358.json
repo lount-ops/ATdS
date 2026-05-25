@@ -1,0 +1,16 @@
+[
+  {
+    "pkg": "yaml",
+    "current": "2.7.1",
+    "patched": "1.10.3",
+    "eco": "npm",
+    "cve": "CVE-2026-33532",
+    "severity": "medium",
+    "status": "pending",
+    "depth": 5,
+    "audited": "2026-05-20",
+    "cvss": 5.3,
+    "title": "Uncontrolled Recursion",
+    "source": "Snyk"
+  }
+]
