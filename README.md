@@ -6,7 +6,7 @@
 ---
 
 ### 🦑 Why I needed this and you may as well.
-`Environments` `Debian 13, FNM, Nushell 0.106.0` `Debian 13, FNM, ZSH 5.1`
+`Environments` `Debian 13, FNM, Nushell (Linux) 0.112.0` `Debian 13, FNM, ZSH 5.1`
 `Should work w/ NVM`
 
 I  was looking around needing a way to render a site w/ dynamic content, and easy dev database hooks. I discovered Astro and thought to myself, "Self, it can't get much better than this."
@@ -71,18 +71,19 @@ pip install nodeenv
 nodeenv -p
 ```
 
-With the node environment in place, `npx` and `npm` are now available.
-`ZSH` or `Bash`
+Or using Nushell and `fnm`
+```nu
+fnm exec npx npm-check-updates -u; npm -i
+```
+
+With the node environment in place, `npx` and `npm` are now available for `ZSH` or `Bash`
 ```bash
 npx npm-check-updates -u && npm i 
 # non FNM laced
 ```
 
-For `Nushell`
-```nu
-fnm npm-check-updates -u; npm i
+FWIW:
 ```
-
 Local `venv` I built this in:
 ```bash
 > python3 --version
@@ -100,6 +101,24 @@ npx npm audit fix
 
 It's likely at this point, npm is complaining about needing someone to run an `audit fix` and there could be between one and... `/me rolls dice` 19 packages needing attention.
 
+Runs as expected w/ `npm`
+```zsh
+npm run dev
+```
+
+Or `deno`
+```zsh
+deno run dev
+```
+
+The landing page should be the ATdS matrix.
+
+To get newer data, run the `snyk harvest` script in the doc root:
+```
+./snyk-harvest.zsh
+```
+
+Then reload the index page.
 ### Under the Hood;
 
 #### 🛠 Base️ Project Structure Breakdown
@@ -111,12 +130,15 @@ It's likely at this point, npm is complaining about needing someone to run an `a
 │   ├── assets/       # Assets Files
 │   ├── components/   # Reusable components
 │   ├── layouts/      # Layout files
-│   └── pages/        # Pages (routes right?), .astro and .jsx home
+|   ├── lib/          # load-vulns.mjs lives here
+│   └── pages/        # Pages (routes), VulnMatrix.astro, vulns.json.js home
 |   |        └── api/        # vulns.json.js home
 │   └── styles/       # Style Files
 ├── astro.config.mjs  # Astro configuration
 ├── tailwind.config.js # TailwindCSS configuration
 └── package.json
+
+## All pathing can be adjustsed w/out hassle
 ```
 
 ### 🌱 Why use this scaffolding?
